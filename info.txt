@@ -12,8 +12,9 @@ BUFFER CREATION:-
 
 SELECTING EARTHQUAKES INSIDE BUFFER:-
   "buffer_earthquake_selector.py" which use "country_buffer_data.csv" which is the output of "final_buffered_boundary.py" and the countries
-  earthquake catalog in proper format (CSV file containing columns named "latitude", "longitude" with floating number values with "|" as seperator.) as input and will give a CSV file as output which will only contain the data whose coordinates are within the country buffer mentioned in "country_buffer_data.csv" the output
-  file will be named as "final_merge_(country name).csv" with seperator "|".
+  earthquake catalog in proper format (CSV file containing columns named "latitude", "longitude" with floating number values with "|" as seperator.) as input and will
+  give a CSV file as output which will only contain the data whose coordinates are within the country buffer
+  mentioned in "country_buffer_data.csv" the output file will be named as "final_merge_(country name).csv" with seperator "|".
 
   Before starting buffer event selection, create folders named:
     1) Catalogs
