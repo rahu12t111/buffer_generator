@@ -8,12 +8,13 @@ BUFFER CREATION:-
   INPUT (final_buffered_boundary.py):
     buffere_distance:(dtype=float) ; correction_accuracy:(dtype=int) ; Country_name:(dtype=string)
   OUTPUT (final_buffered_boundary.py):
-    "country_buffer_data.csv" which will contain multiple polygon shapes. All the polygons of a particular country are named as "country_name{polygon number}". Example,    as taiwan is made from multiple polygons so the output file will contain Id name = Taiwan1 or Taiwan2.
+    "country_buffer_data.csv" which will contain multiple polygon shapes. All the polygons of a particular country are named as "country_name{polygon number}".
+    Example, as taiwan is made from multiple polygons so the output file will contain Id name = Taiwan1 or Taiwan2.
 
 SELECTING EARTHQUAKES INSIDE BUFFER:-
   "buffer_earthquake_selector.py" which use "country_buffer_data.csv" which is the output of "final_buffered_boundary.py" and the countries
-  earthquake catalog in proper format (CSV file containing columns named "latitude", "longitude" with floating number values with "|" as seperator.) as input and will
-  give a CSV file as output which will only contain the data whose coordinates are within the country buffer
+  earthquake catalog in proper format (CSV file containing columns named "latitude", "longitude" with floating number values with "|" as seperator.) as
+  input and will give a CSV file as output which will only contain the data whose coordinates are within the country buffer
   mentioned in "country_buffer_data.csv" the output file will be named as "final_merge_(country name).csv" with seperator "|".
 
   Before starting buffer event selection, create folders named:
