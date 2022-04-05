@@ -19,7 +19,7 @@ SELECTING EARTHQUAKES INSIDE BUFFER:-
     1) Catalogs
     2) country_buffered_catalogs
 
-  To USE "buffer_earthquake_selector.py" put input files with proper format in folder named "Catalogs" in same directory and RUN command : "python3             buffer_earthquake_selector.py"
+  To USE "buffer_earthquake_selector.py" put input files with proper format in folder named "Catalogs" in same directory and RUN command : "python3 buffer_earthquake_selector.py"
 
   "Catalogs" foder contains the merged catalogs used to find the earthquakes which happened within the buffer region of the country.
 
