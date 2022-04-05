@@ -1,8 +1,9 @@
-"final_buffered_boundary.py" is a python code which takes list of country names as input and and will return a output csv file named 
+"final_buffered_boundary.py" : python code which takes list of country names as input and and will return a output csv file named 
 "country_buffer_data.csv" which will contain multiple polygon shapes. All the polygons of a particular country are named as 
 "country_name{polygon number}". Example, as taiwan is made from multiple polygons so the output file will contain Id name = Taiwan1 or Taiwan2.
 
-To USE "final_buffered_boundary.py" RUN command : "python3 final_buffered_boundary.py $buffer_distance $correction_accuracy $Country_name1 $Country_name2  $Country_name3 ...."
+To generate buffer polygon for countries use "final_buffered_boundary.py" by RUNNING command : "python3 final_buffered_boundary.py $buffer_distance $correction_accuracy $Country_name1 $Country_name2  $Country_name3 ...."
+INPUT (final_buffered_boundary.py):
 buffere_distance:(dtype=float) ; correction_accuracy:(dtype=int) ; Country_name:(dtype=string)
 
 To find the place where you have to spcify the input in the code search for word " INPUT " in the python file.
