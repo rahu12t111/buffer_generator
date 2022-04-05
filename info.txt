@@ -1,29 +1,32 @@
-"final_buffered_boundary.py" : python code which takes list of country names as input and and will return a output csv file named 
-"country_buffer_data.csv" which will contain multiple polygon shapes. All the polygons of a particular country are named as 
-"country_name{polygon number}". Example, as taiwan is made from multiple polygons so the output file will contain Id name = Taiwan1 or Taiwan2.
+DEPENDENCIES:-
+  ast, os, sys, json, shapely, pandas, geopandas, matplotlib, math, numpy
 
-To generate buffer polygon for countries use "final_buffered_boundary.py" by RUNNING command : "python3 final_buffered_boundary.py $buffer_distance $correction_accuracy $Country_name1 $Country_name2  $Country_name3 ...."
-INPUT (final_buffered_boundary.py):
-buffere_distance:(dtype=float) ; correction_accuracy:(dtype=int) ; Country_name:(dtype=string)
+BUFFER CREATION:-
+  "final_buffered_boundary.py" : python code which takes list of country names as input and and will return a output csv file named "country_buffer_data.csv".
+  RUN:
+    To generate buffer polygon for countries use "final_buffered_boundary.py" by RUNNING command : "python3 final_buffered_boundary.py $buffer_distance $correction_accuracy $Country_name1 $Country_name2  $Country_name3 ...."
+  INPUT (final_buffered_boundary.py):
+    buffere_distance:(dtype=float) ; correction_accuracy:(dtype=int) ; Country_name:(dtype=string)
+  OUTPUT (final_buffered_boundary.py):
+    "country_buffer_data.csv" which will contain multiple polygon shapes. All the polygons of a particular country are named as "country_name{polygon number}". Example,    as taiwan is made from multiple polygons so the output file will contain Id name = Taiwan1 or Taiwan2.
 
-To find the place where you have to spcify the input in the code search for word " INPUT " in the python file.
+SELECTING EARTHQUAKES INSIDE BUFFER:-
+  "buffer_earthquake_selector.py" which use "country_buffer_data.csv" which is the output of "final_buffered_boundary.py" and the countries
+  earthquake catalog in proper format (CSV file containing columns named "latitude", "longitude" with floating number values with "|" as seperator.) as input and will give a CSV file as output which will only contain the data whose coordinates are within the country buffer mentioned in "country_buffer_data.csv" the output
+  file will be named as "final_merge_(country name).csv" with seperator "|".
 
-"buffer_earthquake_selector.py" which use "country_buffer_data.csv" which is the output of "final_buffered_boundary.py" and the countries
-earthquake catalog in proper format (CSV file containing columns named "latitude", "longitude" with floating number values with "|" as seperator.) as input and will give a CSV file as output which will only contain the data whose coordinates are within the country buffer mentioned in "country_buffer_data.csv" the output
-file will be named as "final_merge_(country name).csv" with seperator "|".
+  Before starting buffer event selection, create folders named:
+    1) Catalogs
+    2) country_buffered_catalogs
 
-Before starting buffer event selection, create folders named:
-  1) Catalogs
-  2) country_buffered_catalogs
-  
-To USE "buffer_earthquake_selector.py" put input files with proper format in folder named "Catalogs" in same directory and RUN command : "python3 buffer_earthquake_selector.py"
+  To USE "buffer_earthquake_selector.py" put input files with proper format in folder named "Catalogs" in same directory and RUN command : "python3             buffer_earthquake_selector.py"
 
-"Catalogs" foder contains the merged catalogs used to find the earthquakes which happened within the buffer region of the country.
+  "Catalogs" foder contains the merged catalogs used to find the earthquakes which happened within the buffer region of the country.
 
-"country_buffered_catalogs" folder contains the catalogs with earthquakes within the buffer boundary.
-
-"final_buffer_boundary_plotter.py" is a python programme which ask for company name or ISO3 code as mentioned in "TM_WORLD_BORDERS-0.3.dbf" as input
-and plot raw and final country boundary with latitude and longitude as axis, this can be plotted on map or a globe to get clear picture.
+  "country_buffered_catalogs" folder contains the catalogs with earthquakes within the buffer boundary.
+BUFFER REGION PLOTTER:-
+  "final_buffer_boundary_plotter.py" is a python programme which ask for company name or ISO3 code as mentioned in "TM_WORLD_BORDERS-0.3.dbf" as input
+  and plot raw and final country boundary with latitude and longitude as axis, this can be plotted on map or a globe to get clear picture.
 
 IMPORTANT NOTE :- All the input files used by the functions in this folder should be present in the same directory as the program. These include
 4 shapefiles named "TM_WORLD_BORDERS-0.3.*", the catalogs which will be used as input for buffer earthquake selector, "country_buffer_data.csv"
